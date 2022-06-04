@@ -6,10 +6,12 @@ import styles from '../../styles/Entrada.module.css';
 import {formatearFecha} from '../../helpers/formatoFecha'; 
 
 const EntradaBlog = ({resultado}) => {
-    const {contenido, imagen, published_at, titulo} = resultado;
+    const {contenido, imagen, published_at, titulo, url} = resultado[0];
     console.log(published_at);
     return (
-        <Layout>
+        <Layout
+            pagina={titulo}
+        >
             <main className="contenedor">
                 <h1 className="heading">
                     {titulo}
@@ -38,7 +40,7 @@ export async function getStaticPaths(){
     const resultado = await respuesta.json();
 
     const paths = resultado.map(entrada => ({
-        params: {id:entrada.id}
+        params: {url:entrada.url}
     }))
     return {
         paths,
@@ -46,9 +48,9 @@ export async function getStaticPaths(){
     }
 }
 
-export async function getStaticProps({params: {id}}){
-    const url = `${process.env.API_URL}/blogs/${id}`;
-    const respuesta = await fetch(url);
+export async function getStaticProps({params: {url}}){
+    const urlBlog = `${process.env.API_URL}/blogs?url=${url}`;
+    const respuesta = await fetch(urlBlog);
     const resultado = await respuesta.json();
     return {
         props: {
