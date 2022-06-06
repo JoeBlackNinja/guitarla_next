@@ -35,8 +35,8 @@ const EntradaBlog = ({resultado}) => {
 }
 
 export async function getStaticPaths(){
-    const url = `${process.env.API_URL}/blogs`;
-    const respuesta = await fetch(url);
+    const urlBlog = `${process.env.API_URL}/blogs`;
+    const respuesta = await fetch(urlBlog);
     const resultado = await respuesta.json();
 
     const paths = resultado.map(entrada => ({

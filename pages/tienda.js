@@ -1,13 +1,16 @@
 import Layout from '../components/Layout';
+import Listado from '../components/Listado';
 
 const Tienda = ({guitarrasInfo}) => {
-  console.log(guitarrasInfo);
   return (
     <Layout
         pagina='Tienda Virtual'
     >
         <main className='contenedor'>
           <h1 className='heading'>Nuestra colección</h1>
+          <Listado
+            guitarrasInfo={guitarrasInfo}
+          />
         </main>
     </Layout>
   )
