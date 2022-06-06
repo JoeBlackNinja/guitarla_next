@@ -17,7 +17,8 @@ const Tienda = ({guitarrasInfo}) => {
 }
 
 export async function getServerSideProps() {
-  const url = `${process.env.API_URL}/guitarras`;
+  //?_sort=created_at:desc AGREGAR UN FILTRO DE LLAMADO 
+  const url = `${process.env.API_URL}/guitarras?_sort=precio:desc`;
   const respuesta = await fetch(url);
   const guitarrasInfo = await respuesta.json();
 
