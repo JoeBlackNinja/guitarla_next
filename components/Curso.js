@@ -1,16 +1,17 @@
-
+import styles from '../styles/Curso.module.css';
 
 const Curso = ({curso}) => {
     const {titulo, contenido, imagen} = curso;
     return (
         <section>
-            <div className="contenedor">
-                <div>
-                    <h2>{titulo}</h2>
-                    <p>{contenido}</p>
-                    <a href="#">Mas información</a>
+            <div className={`contenedor ${styles.grid}`}>
+                <div className={styles.contenido}>
+                    <h2 className='heading'>{titulo}</h2>
+                    <p className={styles.texto}>{contenido}</p>
+                    <a className={styles.enlace} href="#">Mas información</a>
                 </div>
             </div>
+
             {/* ESTILIZADO RARO...*/}
             
             <style jsx>

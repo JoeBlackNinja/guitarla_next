@@ -2,7 +2,7 @@ import Head from "next/head";
 import Header from "./Header";
 import Footer from "./Footer";
 
-const Layout = ({children, pagina}) => {
+const Layout = ({children, pagina, guitarra}) => {
   return (
     <div>
         <Head>
@@ -14,7 +14,9 @@ const Layout = ({children, pagina}) => {
             <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;0,900;1,400&display=swap" rel="stylesheet"></link>
         </Head>
 
-        <Header/>
+        <Header
+          guitarra={guitarra}
+        />
 
         {children}
 

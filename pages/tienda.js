@@ -29,4 +29,8 @@ export async function getServerSideProps() {
   }
 }
 
+Layout.defaultProps = {
+  guitarra : null
+}
+
 export default Tienda;

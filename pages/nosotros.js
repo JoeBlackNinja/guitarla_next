@@ -52,4 +52,8 @@ const Nosotros = () => {
   )
 }
 
+Layout.defaultProps = {
+  guitarra : null
+}
+
 export default Nosotros

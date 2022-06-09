@@ -1,7 +1,5 @@
 import Layout from '../components/Layout';
-import Entrada from '../components/Entrada';
-
-import styles from '../styles/Blog.module.css';
+import ListadoBlog from '../components/ListadoBlog';
 
 const Blog = ({resultado}) => {
   return (
@@ -9,15 +7,9 @@ const Blog = ({resultado}) => {
         pagina='Blog'
     >
         <main className='contenedor'>
-          <h2 className='heading'>Blog</h2>
-          <div className={styles.blog}>
-            {resultado.map(entrada => (
-              <Entrada
-                key={entrada.id}
-                entrada={entrada}
-              />
-            ))}
-          </div>
+          <ListadoBlog
+            entradas={resultado}
+          />
         </main>
     </Layout>
   )
@@ -25,6 +17,7 @@ const Blog = ({resultado}) => {
 
 export async function getServerSideProps() {
   const url = `${process.env.API_URL}/blogs?_sort=created_at:desc`;
+  
   const respuesta = await fetch(url);
   const resultado = await respuesta.json();
 

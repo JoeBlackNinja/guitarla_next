@@ -58,4 +58,5 @@ export async function getServerSideProps({query: {url}}) {
     }
 }
 
+
 export default GuitarraPages;

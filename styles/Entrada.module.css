@@ -47,4 +47,8 @@
 
 .texto {
     white-space: pre-wrap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    -webkit-line-clamp: 2;
 }
