@@ -40,10 +40,21 @@ function MyApp({ Component, pageProps }) {
     setCarrito(carritoActualizado);
   }
 
+  const eliminarArticulo = (id) => {
+    const areYouSureAlert = confirm('Estás seguro de eliminar este articulo');
+    console.log(areYouSureAlert);
+    if(areYouSureAlert){    
+      const carritoActualizado = carrito.filter( articulo => 
+        articulo.id !== id);
+      setCarrito(carritoActualizado);
+    }
+  }
+
   return <Component {...pageProps} 
     carrito={carrito}
     agregarCarrito={agregarCarrito}
     actualizarCantidad={actualizarCantidad}
+    eliminarArticulo={eliminarArticulo}
   />
 }
 
