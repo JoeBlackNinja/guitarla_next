@@ -7,7 +7,6 @@ import {formatearFecha} from '../../helpers/formatoFecha';
 
 const EntradaBlog = ({resultado}) => {
     const {contenido, imagen, published_at, titulo, url} = resultado[0];
-    console.log(published_at);
     return (
         <Layout
             pagina={titulo}

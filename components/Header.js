@@ -5,7 +5,6 @@ import { useRouter } from 'next/router';
 
 const Header = ({guitarra}) => {
     const router = useRouter();
-    console.log(router);
     return (
         <header className={styles.header}>
             <div className="contenedor">
