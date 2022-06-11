@@ -2,7 +2,7 @@ import Layout from '../components/Layout';
 import styles from '../styles/Carrito.module.css';
 import Image from 'next/image';
 
-const Carrito = ({carrito, agregarCarrito}) => {
+const Carrito = ({carrito, actualizarCantidad}) => {
     return (
         <Layout 
         pagina={'Carrito de Compras'}
@@ -29,9 +29,28 @@ const Carrito = ({carrito, agregarCarrito}) => {
                                     <p className={styles.nombre}>
                                         Modelo: {producto.nombre}
                                     </p>
-                                    <p className={styles.cantidad}>
-                                        Cantidad: {producto.cantidad}
-                                    </p>
+
+                                    <div className={styles.cantidad}>
+                                        <p>Cantidad:</p>
+                                        <select
+                                            className={styles.select}
+                                            value={producto.cantidad}
+                                            onChange={(e) => 
+                                                actualizarCantidad({
+                                                    cantidad: e.target.value,
+                                                    id: producto.id
+                                            })}
+                                        >
+                                            <option value='1'>1</option>
+                                            <option value='2'>2</option>
+                                            <option value='3'>3</option>
+                                            <option value='4'>4</option>
+                                            <option value='5'>5</option>
+                                            <option value='6'>6</option>
+                                            <option value='7'>7</option>
+                                        </select>
+                                    </div>
+
                                     <p className={styles.precio}>
                                         <span>Precio: ${producto.precio}</span>
                                     </p>
