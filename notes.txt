@@ -1,0 +1,13 @@
+ESTE REPO ES DEL LADO DEL CLIENTE
+
+Se utilizó NEXT como base
+se estilizó modulos CSS para estilizado. Respeta esa sintaxis en carpeta styles y facilita
+
+next facilita el ruteo dinamico ya que lo hace automaticamente
+
+las variables globales tiene que subirse en un .env para vercel... si no te va a dar errores
+
+al momento de -npm run build- quita la configuracion de no subir .env en gitignore para que lo suba 
+a vercel, despues lo regresas.
+
+aqui aprendiste a estilizar... incluso un poco de CSS avanzado con @keyframes. @media-query para responsive
