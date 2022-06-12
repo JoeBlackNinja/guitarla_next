@@ -11,3 +11,6 @@ al momento de -npm run build- quita la configuracion de no subir .env en gitigno
 a vercel, despues lo regresas.
 
 aqui aprendiste a estilizar... incluso un poco de CSS avanzado con @keyframes. @media-query para responsive
+
+getServerProps() funcion rara que renderiza del lado del servidor... se usa con datos altamente dinamicos
+getStaticProps() funcion seudoextraña que renderiza como debe de ser... o ya ni sé, pero se usa con datos estaticos-
